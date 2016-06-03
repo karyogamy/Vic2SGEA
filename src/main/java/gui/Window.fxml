@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="idControl" maxWidth="-1.0" minWidth="1185.0" prefHeight="800.0" prefWidth="1200.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="gui.Control">
+  <!-- TODO Add Nodes -->
+  <children>
+    <ScrollPane id="ScrollPane" layoutX="14.0" layoutY="167.0" prefViewportHeight="520.0" prefViewportWidth="1173.0">
+      <content>
+        <TableView id="table" fx:id="mainTable" editable="true" onMouseClicked="#onTableClicked" prefHeight="520.0" prefWidth="1173.0" style="&#10;&#10;" tableMenuButtonVisible="true">
+          <columns>
+            <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="276.0" text="Country" fx:id="colCountry" />
+            <TableColumn id="colPopulation" maxWidth="5000.0" minWidth="10.0" prefWidth="114.0" style="&#10;&#10;&#10;&#10;&#10;" text="Population" fx:id="colPopulation" />
+            <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="95.0" text="GDP" fx:id="colGDP" />
+            <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="95.0" text="Nominal GDP" fx:id="colGDPNominal" />
+            <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="126.0" style="&#10;&#10;" text="Consumption" fx:id="colConsuption" />
+            <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="93.0" text="Export" fx:id="colExport" />
+            <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="84.0" text="Import" fx:id="colImport" />
+            <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="147.0" text="GDP per capita (PPP)" fx:id="colGDPPer" />
+            <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="147.0" text="GDP per capita (Nominal)" fx:id="colGDPPCNominal" />
+            <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="107.0" text="GDP place" fx:id="colGDPPlace" />
+            <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="112.0" text="GDP part %" fx:id="colGDPPart" />
+            <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="131.0" text="Gold income" fx:id="colGoldIncome" />
+            <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="47.0" text="Workforce" fx:id="colWorkforce" />
+            <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="18.0" text="Employed" fx:id="colEmployment" />
+            <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="137.0" text="Unemployment">
+              <columns>
+                <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="80.0" style="" text="RGO" fx:id="colUnemploymentProcent" />
+                <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="80.0" text="Factory" fx:id="colUnemploymentProcentFactory" />
+              </columns>
+            </TableColumn>
+          </columns>
+        </TableView>
+      </content>
+    </ScrollPane>
+    <TextField id="saveGameTextField" fx:id="tfSaveGame" alignment="CENTER_LEFT" layoutX="232.0" layoutY="14.0" prefWidth="860.0" />
+    <Button id="btnTest" fx:id="btnLoad" defaultButton="true" layoutX="14.0" layoutY="13.0" mnemonicParsing="false" onAction="#onLoad" prefHeight="62.0" prefWidth="86.0" text="Load!" />
+    <TextField id="saveGameTextField" fx:id="tfLocalization" alignment="BOTTOM_LEFT" layoutX="232.0" layoutY="49.0" prefWidth="860.0" />
+    <Button id="btn" fx:id="btnBrowseSave" layoutX="1108.0" layoutY="13.0" mnemonicParsing="false" onAction="#onBrowseSave" text="Browse">
+      <tooltip>
+        <Tooltip text="Like Romania1914_08_01.v2" />
+      </tooltip>
+    </Button>
+    <Button fx:id="btnBrowseLocal" alignment="CENTER_RIGHT" layoutX="1108.0" layoutY="49.0" mnemonicParsing="false" onAction="#onBrowseLocal" text="Browse">
+      <tooltip>
+        <Tooltip text="Like C:/Games/Victoria II/" />
+      </tooltip>
+    </Button>
+    <Label layoutX="107.0" layoutY="14.0" text="Savegame path:">
+      <tooltip>
+        <Tooltip text="Like Romania1914_08_01.v2" />
+      </tooltip>
+    </Label>
+    <Label layoutX="107.0" layoutY="52.0" text="Game folder:">
+      <tooltip>
+        <Tooltip text="Like C:/Games/Victoria II/" />
+      </tooltip>
+    </Label>
+    <TextField alignment="CENTER" editable="false" focusTraversable="false" layoutX="14.0" layoutY="760.0" prefWidth="1172.0" promptText="" text="Official thread: http://forum.paradoxplaza.com/forum/showthread.php?715468-TOOL-Victoria-2-save-game-economy-analyzer" />
+    <Label alignment="CENTER" contentDisplay="LEFT" layoutX="14.0" layoutY="707.0" prefWidth="1172.0" text="Victoria 2 save game economy analyzer v.9 beta by Nashetovich (inspired by Lionhunter's war analyzer)" />
+    <Label alignment="CENTER" contentDisplay="LEFT" layoutX="15.0" layoutY="732.0" prefWidth="1172.0" text="Distributing under BSD License. Used  EugFile: an open-source Java library" />
+    <Label layoutX="107.0" layoutY="90.0" text="Mod folder:">
+      <tooltip>
+        <Tooltip text="Like C:/Games/Victoria II/mod/SiR" />
+      </tooltip>
+    </Label>
+    <TextField id="tfModName" fx:id="tfModPatch" editable="true" layoutX="232.0" layoutY="84.0" prefWidth="860.0" text="" />
+    <Button id="btnBrowseLocal" fx:id="btnBrowseMod" alignment="BASELINE_RIGHT" layoutX="1108.0" layoutY="84.0" mnemonicParsing="false" onAction="#onBrowseMod" text="Browse">
+      <tooltip>
+        <Tooltip text="Like C:/Games/Victoria II/mod/SiR" />
+      </tooltip>
+    </Button>
+    <Button fx:id="btnGoods" disable="true" layoutX="14.0" layoutY="83.0" mnemonicParsing="false" onAction="#onGoods" prefWidth="86.0" text="Goods" />
+    <Label fx:id="lblStartDate" layoutX="14.0" layoutY="117.0" text="" />
+    <Label fx:id="lblCurrentDate" layoutX="14.0" layoutY="137.0" text="" />
+    <Label fx:id="lblPlayer" alignment="CENTER_RIGHT" contentDisplay="LEFT" layoutX="793.0" layoutY="117.0" prefWidth="393.0" text="" visible="true" />
+    <Label id="lblbPopCount" fx:id="lblPopCount" alignment="CENTER_RIGHT" layoutX="929.0" layoutY="137.0" prefWidth="257.0" text="" textAlignment="LEFT" visible="true" />
+    <ProgressIndicator fx:id="piLoad" prefHeight="152.0" prefWidth="106.0" progress="-0.03" visible="false" AnchorPane.bottomAnchor="300.0" AnchorPane.leftAnchor="500.0" AnchorPane.rightAnchor="500.0" AnchorPane.topAnchor="300.0" />
+  </children>
+</AnchorPane>
